@@ -2,6 +2,7 @@ from flask import Flask, make_response, jsonify, request
 from flask_migrate import Migrate
 from database import db
 from flask_restful import Api, Resource
+from models import User
 import os
 
 DB_URL = os.environ.get('DB_URL')
@@ -20,13 +21,15 @@ def hello_world():
 def hello():
     return "<p>Hello, World!</p>"
 
-@app.route('/api/create-pets-table')
-def create_table():
-    
-    # try:
-    #     return jsonify(message="Your string goes here"), 200
-    # except Exception as error:
-    #     return jsonify(message="Your string goes here"), 500
+@app.route('/api/test',  methods = ['GET', 'PATCH'])
+def test():
+    if(request.method == 'GET'):
+        all = User.query.all()
+        users = []
+        for user in users:
+            users.append(user.to_dict())
+        return users, 200
+
     return jsonify(m=DB_URL)
 
 
