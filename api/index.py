@@ -1,11 +1,11 @@
 from flask import Flask, make_response, jsonify, request
-from flask_migrate import Migrate
+# from flask_migrate import Migrate
 from database import db
 from flask_restful import Api, Resource
 from flask_cors import CORS
 from models import User
 import os
-os.system("pip install flask-migrate")
+# os.system("pip install flask-migrate")
 
 app = Flask(__name__)
 CORS(app)
