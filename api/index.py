@@ -9,7 +9,7 @@ import os
 app = Flask(__name__)
 CORS(app)
 # DB_URL = os.environ.get('DB_URL')
-DB_URL="postgresql:///default:0kfNebo1Twgp@ep-hidden-rain-16108082.us-east-1.postgres.vercel-storage.com:5432/verceldb"
+DB_URL="postgresql://default:0kfNebo1Twgp@ep-hidden-rain-16108082.us-east-1.postgres.vercel-storage.com:5432/verceldb"
 app.config['SQLALCHEMY_DATABASE_URI'] = DB_URL
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.json.compact = False
@@ -30,13 +30,11 @@ def test():
     if(request.method == 'GET'):
         all = User.query.all()
         users = []
-        for user in users:
-            users.append(user.to_dict())
-        return users, 200
-
-    return jsonify(m=DB_URL)
+        for user in all:
+            users.append(str(user))
+        return jsonify(users), 200
 
 
 if __name__ == '__main__':
-    app.run(debug = True)
+    app.run()
 
