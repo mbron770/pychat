@@ -5,7 +5,8 @@ from flask_restful import Api, Resource
 from models import User
 import os
 
-DB_URL = os.environ.get('DB_URL')
+# DB_URL = os.environ.get('DB_URL')
+DB_URL="postgresql:///default:0kfNebo1Twgp@ep-hidden-rain-16108082.us-east-1.postgres.vercel-storage.com:5432/verceldb"
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = DB_URL
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
