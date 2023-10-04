@@ -18,6 +18,7 @@ db.init_app(app)
 @app.route("/api/python")
 def hello_world():
     return "<p>Hello, World!</p>"
+
 @app.route('/api')
 def hello():
     return "<p>Hello, World!</p>"
