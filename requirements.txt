@@ -65,6 +65,6 @@ virtualenv-clone==0.5.7
 wcwidth==0.2.6
 Werkzeug==3.0.0
 whitenoise==6.5.0
-zipp==3.16.2
+zipp==3.17.0
 zope.event==5.0
 zope.interface==6.0
