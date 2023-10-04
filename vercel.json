@@ -2,10 +2,8 @@
     "builds": [
       {
         "src": ".",
-        "use": "@vercel/python",
-        "build": "flask build"
+        "use": "@vercel/python"
       }
     ]
   }  
 
-  
